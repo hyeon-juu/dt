@@ -1,0 +1,38 @@
+<style>
+  body>div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div>div {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  div+div {
+    margin-top: 20px;
+  }
+</style>
+
+<body>
+  <div>
+    <div class="spring">
+      <!-- 최상위 경로로부터 내려오기 -->
+      <img src="/path/spring/1.png">
+      <img src="http://127.0.0.1:5500/path/spring/2.png">
+      <!-- <img src="http://localhost:5500/path/spring/2.png"> -->
+    </div>
+    <div class="summer">
+      <img src="../summer/1.png">
+      <img src="../summer/2.png">
+    </div>
+    <div class="fall">
+      <img src="../fall/1.png">
+      <img src="../fall/2.png">
+    </div>
+    <div class="winter">
+      <img src="../winter/1.png">
+      <img src="../winter/2.png">
+    </div>
+  </div>
+</body>
