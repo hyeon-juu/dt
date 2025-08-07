@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div>div {
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 100px 100px 100px;
+
+        }
+
+        .wrapper div:nth-child(1) {
+            grid-row: 1;
+            grid-column: 1 / 3;
+        }
+
+        .wrapper div:nth-child(2) {
+            grid-row: 1 / 3;
+            grid-column: 3;
+        }
+
+        .wrapper div:nth-child(3) {
+            grid-row: 3;
+            grid-column: 2/4;
+        }
+
+        .wrapper div:nth-child(4) {
+            grid-row: 2 / 4;
+            grid-column: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="a" onclick="gray(event)">A</div>
+        <div class="b" onclick="gray(event)">B</div>
+        <div class="c" onclick="gray(event)">C</div>
+        <div class="d" onclick="gray(event)">D</div>
+        <div class="e" onclick="gray(event)">E</div>
+    </div>
+    <script>
+        // const a = document.querySelector(".a");
+        // const b = document.querySelector(".b");
+        // const c = document.querySelector(".c");
+        // const d = document.querySelector(".d");
+        // const e = document.querySelector(".e");
+        const div = document.querySelector(".wrapper");
+        function gray(event) {
+            console.log(event);
+            event.target.style.backgroundColor = "gray";
+        }
+
+    </script>
+</body>
+
+</html>

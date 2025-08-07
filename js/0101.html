@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo">text</p>
+    <button type="button" onclick="change()">change</button>
+    <button type="button" onclick="change2()">change2</button>
+    <script>
+        document.querySelector("#demo").addEventListener("click", fn);
+
+        function change() {
+            document.querySelector("#demo").innerHTML = "<u>change</u>";
+            // alert(1);
+            // alert(2);
+            console.log(1);
+            console.log(2);
+            // document.write("helloworld");
+            // window.print();
+
+
+        }
+
+        function change2() {
+            document.querySelector("button:nth-of-type(2)").innerHTML = "hello";
+            // document.querySelector('body').style.backgroundColor = "tomato";
+            document.body.style.backgroundColor = "blue";
+        }
+        function fn() {
+            location = "http://www.naver.com";
+        }
+    </script>
+</body>
+
+</html>
