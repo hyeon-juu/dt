@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //4가 아니라 1, 2, 3
+        function makeTimers() {
+            let count = 1;
+
+            //반복문은 새로운 스코프 생성
+            for (; count <= 10; count++) {
+                let a = count;
+                setTimeout(function () { //비동기
+                    console.log(a); // 현재는 4만 출력됨
+                }, count * 1000);
+            }
+        }
+
+        makeTimers();
+    </script>
+
+</body>
+
+</html>

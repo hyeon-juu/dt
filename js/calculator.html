@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 100px 100px 100px 100px;
+        }
+
+        div>div {
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #zero {
+            grid-column: 1 / 4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div id="zero">0</div>
+    </div>
+    <h1></h1>
+    <button onclick="back()">Back</button>
+
+    <!-- 첫 숫자로 0 누르면 보이지 않아야 됨
+    3자리마다 통화표기법 -->
+    <script>
+        const h1 = document.querySelector("h1");
+        const btns = document.querySelectorAll('div > div');
+        for (const btn of btns) {
+            // 클릭된 div의 text를 h1에 추가
+            btn.addEventListener('click', (event) => {
+                const text = event.target.innerHTML;
+                // if (h1.textContent.indexOf(0) == 0) {
+                //     document.querySelector('h1').innerHTML += "";
+                // } else {
+
+                if (text == 0 && h1.textContent == "") {
+                    return;
+                }
+                document.querySelector('h1').innerHTML += text;
+
+
+
+            });
+        }
+
+
+        /* Back 버튼 기능 구현 */
+        function back() {
+            const h1 = document.querySelector("h1");
+            h1.innerHTML = h1.textContent.slice(0, -1);
+            console.dir(h1);
+            // console.log(h1.textContent.slice(0, -2));
+        }
+    </script>
+</body>
+
+</html>
+
+
+<!-- substring 0 ~ length-1 -->

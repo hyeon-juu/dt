@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const subjects = [
+            ['HTML', '웹 페이지 구조'],
+            ['CSS', '스타일 지정'],
+            ['JavaScript', '동적 기능 추가']
+        ];
+
+        let str = "";
+        for (let i = 0; i < subjects.length; i++) {
+            for (let j = 0; j < subjects[i].length; j++) {
+                // console.log(subjects[i][j]);
+                str += subjects[i][j];
+            }
+        }
+        console.log(str);
+    </script>
+</body>
+
+</html>

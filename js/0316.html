@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="숫자를 입력하세요.">
+    <button onclick="game()">입력하기</button>
+    <div></div>
+
+    <script>
+        //입력 방법을 input 태그로
+        //정답 시도 횟수 출력
+
+        const com = parseInt(Math.random() * 10 + 1);
+
+        let time = 0;
+        function game() {
+            const div = document.querySelector("div");
+            const input = document.querySelector("input");
+            // const button = document.querySelector("button");
+            // console.dir(input);
+            // let isContinue = true;
+
+
+            if (input.value == com) {
+                alert("정답");
+                time++;
+                div.innerHTML = `시도 횟수 : ${time}번`
+            } else {
+                if (input.value > com) {
+                    alert("입력된 숫자가 더 적음");
+                    time++;
+                } else {
+                    alert("입력된 숫자가 더 큼");
+                    time++;
+                }
+
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

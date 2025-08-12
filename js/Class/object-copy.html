@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const user = { name: 'Bill', age: 20 };
+        const user2 = {};
+        for (const key in user) {
+            user2[key] = user[key];
+        }
+        user2.name = 'Steve';
+        console.log(user2);
+        const user3 = {};
+        Object.assign(user3, user);
+        user3.age = 30;
+        console.log(user3);
+        console.log(user);
+
+        //복사 다른 방법
+        const user4 = { ...user }; //기존의 user가 갖고 있는 값
+        console.log(user4);
+        // console.log(user == user4);
+    </script>
+</body>
+
+</html>

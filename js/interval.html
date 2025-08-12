@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="label"></div>
+    <div class="figure" style="width : 100px; height : 100px; background-color:salmon;"></div>
+    <script>
+        function callback() {
+            const figure = document.querySelector(".figure");
+            const date = new Date();
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+            figure.innerHTML = `${minutes}분 ${seconds}초`
+        }
+        setInterval(callback, 2000);
+    </script>
+</body>
+
+</html>

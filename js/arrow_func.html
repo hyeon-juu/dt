@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //1
+        // console.log(sum1(3, 4));
+        // function sum1(a, b) {
+        //     return a + b;
+        // }
+        // //2 - 호이스팅 안됨
+        // const sum2 = function (a, b) {
+        //     return a + b;
+        // }
+        // console.log(sum2(3, 4));
+        // //3
+        // const sum3 = (a, b) => {
+        //     return a + b;
+        // }
+        // console.log(sum3(3, 4));
+
+
+        // //closure -> 함수 리턴해주면 됨
+        // //전역변수는 어딘가에서 수정 할 수 있지만 지역변수는 불가능
+        // function abc() {
+        //     let 지역변수 = 0;
+        //     return () => { return ++지역변수; }
+        // }
+        // const f = abc();
+        // console.log(f());
+        // console.log(f());
+        // console.log(f());
+
+        // // function a() {
+        // //     let a = 10;
+        // //     b();
+        // // } function b() {
+        // //     let b = 20;
+        // //     console.log(b);
+        // // }
+
+        let seq = -100;
+        function sequence() {
+            console.log(seq);
+            // return function () {
+            seq++;
+            return seq;
+            // };
+        }
+        const check = sequence();
+        window.addEventListener('blur', () => {
+            // const count = check();
+            const count = sequence();
+            if (count > 5) {
+                alert('시험 종료!');
+                window.close();
+            }
+        });
+
+    </script>
+</body>
+
+</html>

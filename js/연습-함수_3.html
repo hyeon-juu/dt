@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calc(n) {
+
+            let total = 0;
+            for (let a of n) {
+                total += a;
+            }
+            return total / n.length;
+        }
+
+
+        console.log(calc([3, 7, 9, 11]));
+    </script>
+</body>
+
+</html>

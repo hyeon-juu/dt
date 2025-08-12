@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const house = {
+            bathroom: 1,
+            room: 2,
+            address: ['제주도', '제주시', '연동'],
+            persons: [
+                { name: 'kim' },
+                { name: 'lee' }
+            ]
+
+        };
+        delete house.bathroom;
+        house.animals = ["🐕‍🦺", "🐈"];
+        console.log(house);
+
+
+
+        //const user = { name: 'Bill', age: '20' };
+        // const user2 = user; //같은 주소값 가짐 // 복사가 아님
+        // user2.name = 'Steve';
+        // console.log(user.name); 
+    </script>
+</body>
+
+</html>

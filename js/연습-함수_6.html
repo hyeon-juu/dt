@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function w(n) {
+            let word = "";
+            for (let i = 1; i <= n; i++) {
+                if (i % 2 == 0) {
+                    word += "박";
+                } else {
+                    word += "수";
+                }
+            }
+            return word;
+        }
+        console.log(w(3));
+        console.log(w(11));
+    </script>
+</body>
+
+</html>
+
+<!-- 함수 메소드 모습은 같음 -->
+<!-- 객체에 소속되어 있으면 메소드, 그렇지 않으면 함수 -->
+ 
