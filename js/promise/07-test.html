@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const data = fetch();
+        // console.log(data);
+        const promise = new Promise((resolve, reject) => {
+            console.log('작업중...');
+            setTimeout(() => {
+                resolve('작업완료');
+                reject(new Error('응답없음'));
+            }, 2000);
+        });
+        console.log(promise);
+        //완료됐을 때 fulfilled 나옴
+        //resolve return 하면 작업 잘 완료한 것
+
+        promise.then((결과) => {//resolve에 들어간 결과가 나옴
+            //마무리 작업
+            console.log(결과);
+        });//대기
+    </script>
+</body>
+
+</html>

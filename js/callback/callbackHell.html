@@ -11,8 +11,8 @@
     <div id="result"></div>
     <script>
         const result = document.querySelector("#result");
-        function eat(callback) {
-            setTimeout(() => {
+        function eat(callback) { //비동기 아님
+            setTimeout(() => {//비동기
                 result.innerHTML += `<p> 밥을 먹어요</p>`;
                 callback();
             }, 1000);
@@ -35,15 +35,18 @@
                 callback();
             }, 1000);
         }
-        eat(() => {
-            drink(() => {
-                cleanTable(() => {
-                    wash(() => {
-                        result.innerHTML += `<p>종료</p>`;
-                    });
-                });
-            });
-        });
+        // eat(() => {
+        //     drink(() => {
+        //         cleanTable(() => {
+        //             wash(() => {
+        //                 result.innerHTML += `<p>종료</p>`;
+        //             });
+        //         });
+        //     });
+        // });
+        eat().then(drink); //resolve하지 않으면 동작하지 않음
+
+        //콜백만을 사용할때의 함수 모습과 promise 사용할 때의 함수 모습 구분
     </script>
 </body>
 

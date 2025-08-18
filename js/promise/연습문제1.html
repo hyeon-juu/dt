@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        const show = document.querySelector("#show");
+        const getHen = () => {
+            return new Promise((res) => {
+                setTimeout(() => {
+                    show.innerHTML += '🐓'
+                    res();
+                }, 1000);
+
+            })
+        };
+        const getEgg = () => {
+            return new Promise((res) => {
+                setTimeout(() => {
+                    show.innerHTML += ' >> 🥚 ';
+                    res();
+                }, 1000)
+            })
+
+        };
+        const cook = (egg) => {
+            return new Promise((res) => {
+                setTimeout(() => {
+                    show.innerHTML += ' >> 🍳';
+                    res();
+                }, 1000);
+
+            })
+
+        };
+        getHen().then(getEgg).then(cook);
+    </script>
+</body>
+
+</html>
