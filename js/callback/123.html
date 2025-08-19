@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const url = `https://data.geoje.go.kr/rfcapi/rest/geojefood/getGeojefoodList?serviceKey=A2usf4txsthrBPXx7%2FckSjISrlOOF3DRCXlpwxFKcl1KPyvOOWSD%2FUhcapvCkM51AdZOieooIvkMdz2XQCt33w%3D%3D`;
+        const res = fetch(url, {
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+        // const data = res.json();//비동기라서 에러
+        const res2 = res.then((data) => {
+            // console.log(data);
+            return data.json();
+
+        });
+        res2.then((data) => {
+            console.log(data);
+            let description = data.weather[0].description;
+            let icon = data.weather[0].icon;
+            let temp = data.main.temp;
+            console.log(icon);
+            document.body.innerHTML += `
+            <h1>${description}</h1>
+            <h1>${temp}</h1>
+            <img src='http://openweathermap.org/img/wn/${icon}@2x.png'/>
+`
+        })
+    </script>
+</body>
+
+</html>
