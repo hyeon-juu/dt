@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="http://ggoreb.com/dt/js/cookie.js"></script>
+    <script>
+        const value = getCookie("popup");
+
+        // setCookie('popup', 'done', 60 * 24);
+        if (!value) {
+            open('child.html', 'naver@', 'width=300, height=400');
+
+        }
+
+        // //쿠키값
+        // const cookie = document.cookie;
+        // console.log(cookie);
+        // const cs = cookie.split("; ")
+        // console.log(cs);
+        // for (let c of cs) {
+        //     const [k, v] = c.split("=");
+        //     console.log(k, v);
+        //     if (k == "key2") {
+        //         console.log(v);
+        //         break;
+        //     }
+
+        // }
+        //문서, 팝업창의 이름, 창의 크기 등
+        // open('http://www.naver.com', 'naver@', 'width=300, height=400');
+    </script>
+</body>
+
+</html>
