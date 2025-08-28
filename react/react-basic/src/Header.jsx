@@ -5,18 +5,20 @@ function Header(p) {
   const [state, setState] = useState(0);
   //State가 변경되면 렌더링이 새로 됨
   //그러면 컴포넌트가 다시 만들어짐
-  const [input, setInput] = useState('');
 
+  function cl() {
+    setState(++state);
+  }
   return (
+
     <header>
-      <input type="text" value={input} onChange={(e) => {
-        let v = e.target.value;
-        //e.target은 input 태그
-        setInput(v);
-      }} />
+
       <h1 onClick={() => {
-        setState(prev => prev + 1);
-      }}>{state}</h1>
+        setState(a => a + 1);
+      }} style={p.style}>{state}</h1>
+
+      {/* <h1 onClick={cl}>{state}</h1> */}
+      {/* 위의 것과 같음 */}
     </header>
     // <header>
     //   <h1 style={{ color: "blue" }} onClick={() => {
