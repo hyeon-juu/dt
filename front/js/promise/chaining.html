@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //비동기 도구 만들 수 있게 해주는 녀석 promise
+        //비동기 제어하는 게 아님
+        const fetchNumber = new Promise((resolve, reject) => {
+            //promise로 return하면 비동기
+            resolve(1);
+        })
+        fetchNumber
+            .then(num => num * 2)
+            .then(num => num * 3)
+            .then(num => {
+                return num * 10;
+            })
+            .then(num => console.log(num));
+    </script>
+</body>
+
+</html>

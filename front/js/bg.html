@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body {
+            background-repeat: no-repeat;
+        } */
+    </style>
+</head>
+
+<body>
+    <script>const date = new Date();
+        let hour = date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+        console.log("현재시각 : " + hour + "시 " + min + "분 " + sec + "초");
+        if (hour < 12) {
+            document.body.style.backgroundImage = 'url(/bg/morning.webp)';
+        } else if (hour < 18) {
+            document.body.style.backgroundImage = 'url(/bg/afternoon.jpg)';
+        } else {
+            document.body.style.backgroundImage = 'url(/bg/evening.jpg)';
+        }
+
+
+
+        // let a = () = () =>{
+
+        // }
+        // a();
+        // a();
+    </script>
+</body>
+
+</html>

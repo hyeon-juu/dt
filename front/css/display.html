@@ -1,0 +1,52 @@
+<style>
+    /* .a {
+        width: 50%;
+        height: 50%;
+        background-color: lightblue;
+        margin: 0 auto;
+    }
+
+    .a>div {
+        width: 50%; 부모 크기에 대해서
+        width: 100vw;veiwport는 브라우저 크기. 
+        부모의 위치에서 시작해서 브라우저 크기만큼.. 아래에 스크롤바 생김 
+        height: 50%;
+        background-color: tomato;
+    } */
+
+    div {
+        border: 1px solid red;
+    }
+
+    div:nth-of-type(1) {
+        display: block;
+    }
+
+    div:nth-of-type(2) {
+        display: inline;
+        /* 인라인이라 적용이 안됨 */
+        width: 50vw;
+        height: 50px;
+    }
+
+    div:nth-of-type(3) {
+        display: inline-block;
+        width: 50vw;
+        height: 50px;
+    }
+</style>
+
+
+<body>
+    <!-- <div class="a">
+        <div></div>
+    </div> -->
+    <div>block 제목</div>
+    <span>block 내용</span>
+    <hr>
+    <div>inline</div>
+    <span>inline 내용</span>
+    <hr>
+    <div>inline-block</div>
+    <span>inline-block 내용</span>
+</body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ZXing QR 리더기 (모듈 + 리사이즈)</title>
+  <script type="module" src="zxing-drop-reader.js"></script>
+</head>
+
+<body>
+  <h2>QR 이미지를 드래그해서 올려보세요</h2>
+  <div id="drop-zone"></div>
+  <div id="qr-output" style="margin-top: 10px; font-weight: bold;"></div>
+
+  <script type="module">
+    import { initZxingQrDropReader } from './zxing-drop-reader.js';
+
+    initZxingQrDropReader({
+      dropTargetSelector: '#drop-zone',
+      outputSelector: '#qr-output'
+    });
+
+    //8.9(토) 추첨 번호 확인
+    //QR code 텍스트에 추첨 번호 추가
+    // 결과 확인 페이지로 연결
+    window.onQrCodeDecoded = (text) => {
+      // https://m.dhlottery.co.kr/qr.do?method=winQr&v=1183q141820323543q111527313240q041517232736q041517232731
+      // console.log('QR에서 읽은 값: ' + text);
+      //추첨 번호 가져오기 - 데이터 수집
+      //추첨번호 제공해주는 API = http://ggoreb.com/api/lotto.jsp
+      text = text + 'q' + lotto;
+      text = text.replace(text.substring(text.indexOf("&v=") + 3, text.indexOf("&v=") + 7), 1184);
+
+      console.log(text);
+      // location = text;
+      open(text, '', 'width=200px, height=300px'); //팝업창 열기
+    };
+    const url = 'http://ggoreb.com/api/lotto.jsp';
+    let lotto = '';
+    fetch(url).then(function a(msg) {
+      //콜백함수 fetch(서버와 통신)로 받아온 정보 보여줌 non blocking으로 동작, 비동기로 동작
+      //fetch를 동기화 시키는 방법 = then
+      console.log(msg);
+      return msg.json(); //데이터 가공 
+    }).then(function b(msg) {
+      console.log(msg);
+      lotto = msg.num1 + msg.num2 + msg.num3 + msg.num4 + msg.num5 + msg.num6;
+      console.log(lotto);
+    }); //비동기로 동작 
+    // const data = fetch(url);
+    // console.log(data);
+
+  </script>
+</body>
+
+</html>
+
+<!-- 선언식은 호이스팅이 됨 
+ 표현식은 안됨-->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let total = 0;
+        while (true) {
+            const selected = [];
+            while (selected.length < 3) {
+                const num = parseInt(Math.random() * 45) + 1;
+                if (selected.indexOf(num) == -1) {
+                    selected.push(num);
+                }
+            }
+            total++;
+            // selected.sort();//오름차순 정렬(console에 찍히는 건 string이라 ..)
+            // selected.sort((a, b) => a - b);
+            console.log(selected);
+            // console.log(selected);
+            const lotto = [1, 8, 16];
+            if (lotto == selected.toString()) {
+                console.log('맞히기 성공');
+                console.log(total + "!!!");
+                break;
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
+<!-- https://ggoreb.pythonanywhere.com/goodprice/data -->

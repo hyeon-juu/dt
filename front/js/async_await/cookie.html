@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.cookie = 'key1=value1;';
+        document.cookie = 'key2=value2;expires=Sun, 01 Jan 2040 00:00:00 GMT';
+        const date = new Date();
+        console.log(date);
+        console.log(date.toUTCString());
+        console.log(Date.now() + 1 * 60 * 1000); //60초
+        const date2 = new Date(Date.now() + 1 * 60 * 1000);
+        console.log(date2);
+        document.cookie = 'key3=value3;expires=' + date2;
+    </script>
+</body>
+
+</html>

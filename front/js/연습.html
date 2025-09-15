@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onClick="log()">확인</button>
+    <input type="text" name="userAddress">
+    <div id="result"></div>
+    <script>
+        const input = document.querySelector('input');
+        const btn = document.querySelector('button');
+        const result = document.querySelector('#result');
+
+        function log() {
+            result.innerHTML = input.value + input.name;
+
+
+            console.log(input.value);
+            console.log(input.name);
+            console.dir(input);
+        }
+
+    </script>
+</body>
+
+</html>

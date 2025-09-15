@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Shape {
+            constructor(width, height, color) {
+                this.width = width;
+                this.height = height;
+                this.color = color;
+            }
+            draw() {
+                console.log(`draw`);
+            }
+            getArea() {
+                console.log(`getArea`)
+            }
+        }
+        class Rectangle extends Shape {
+            draw() {
+                return "drawing " + this.color;
+            }
+            getArea() {
+                return "getArea() => " + this.width * this.height;
+            }
+        }
+        class Triangle extends Shape {
+            draw() {
+                return "🔺";
+            }
+            getArea() {
+                return 200;
+            }
+        }
+        const rect = new Rectangle(20, 20, 'blue');
+        const tr = new Triangle();
+        console.log(rect.draw());
+        console.log(rect.getArea());
+        console.log(tr.draw());
+        console.log(tr.getArea());
+    </script>
+</body>
+
+</html>

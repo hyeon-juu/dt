@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        const result = document.querySelector("#result");
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function eat() {
+            await delay(1000); //비동기
+            console.log("밥을 먹어요");
+            result.innerHTML += `<p>밥을 먹어요</p>`
+        }
+        // function eat() { 위랑 같은 의미
+        //     delay(1000).then(() => {
+        //         console.log("밥을 먹어요");
+        //         result.innerHTML += `<p>밥을 먹어요</p>`
+
+        //     }); //비동기
+        // }
+
+        async function wash(msg) {
+            await delay(1000);
+            console.log("설거지를 먹어요");
+            result.innerHTML += `<p>설거지를 해요</p>`
+        }
+        // eat()
+        //     .then((msg) => { //resolve 값은 매개변수 있으면 전달됨
+        //         // return new Promise((v) => {
+        //         return wash(msg);
+        //         // v();
+        //         // });
+        //     })
+        //     .then((m) => {
+        //         setTimeout(() => {
+        //             // result.innerHTML += 'end';
+        //             result.innerHTML += m + "end";
+        //         }, 1000);
+        //     })
+
+        async function a() {
+            await eat(); //비동기 함수
+            await wash(); //비동기 함수
+        }
+        a();
+
+        // 동기를 비동기로 만들어 주는 것
+        // Promise, async
+        // Promise가 반환되는 함수
+        // async 키워드가 붙은 함수
+        // 비동기를 동기로 만들어 주는 것
+        // then, await
+    </script>
+</body>
+
+</html>

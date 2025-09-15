@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="map" style="width:500px;height:400px;"></div>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05d6394118b1e92c7348c97dad0b1c19"></script>
+    <!-- <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=da146a2a6ff6a54903c1d2a7caecd1c7"></script> -->
+
+    <script>
+        //현재 위도 경도를 카카오 지도의 중심점으로 표시하기
+        //1)options의 center값
+        //LatLng값 
+
+
+        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+        var options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+            level: 3 //지도의 레벨(확대, 축소 정도)
+        };
+
+        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+
+        // var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+
+        navigator.geolocation.getCurrentPosition((pos) => {
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
+            console.log(lat, lon);
+            var moveLatLon = new kakao.maps.LatLng(lat, lon);
+            map.setCenter(moveLatLon);
+
+            var markerPosition = new kakao.maps.LatLng(lat, lon);
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+            marker.setMap(map);
+        });
+
+
+
+
+
+        // 마커를 생성합니다
+        // var marker = new kakao.maps.Marker({
+        //     position: markerPosition
+        // });
+
+        // // 마커가 지도 위에 표시되도록 설정합니다
+        // marker.setMap(map);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = 14;
+        let b = 7;
+        let min = Math.min(a, b);
+        for (let i = min; i >= b; i--) {
+            if (a % i == 0 && b % i == 0) {
+                let gcd = i;
+                console.log(gcd);
+                break;
+            }
+        }
+
+
+        // 재귀함수
+        // let count = 0;
+        // function f() {
+        //     count++;
+        //     console.log(count);
+        //     if (count >= 10) return;
+        //     f();
+        // }
+        // // f();
+
+        // function 팩토리얼(n) {
+        //     if (n == 1) return 1;
+        //     return n * 팩토리얼(n - 1);
+
+        // }
+        // const result = 팩토리얼(5);
+        // console.log(result);
+
+        //유클리드 호제법_최대공약수 구하기
+        let a1 = 192;
+        let b1 = 162;
+        function gcd(a1, b1) {
+            if (b1 == 0) return a1;
+            return gcd(b1, a1 % b1);
+        }
+        console.log(gcd(a1, b1));
+
+        //x*y를 최대공약수로 나눈 값이 최소공배수
+        console.log(a1 * b1 / gcd(a1, b1));
+    </script>
+</body>
+
+</html>

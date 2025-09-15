@@ -1,0 +1,53 @@
+# 공통
+node_modules/
+react/node_modules/
+vite.svg
+react.svg
+
+dist/
+build/
+.env
+.env.*
+.DS_Store
+Thumbs.db
+*.log
+
+# React
+react-app/node_modules/
+react-app/.env
+react-app/build/
+react-app/.next/
+react-app/.cache/
+react-app/.vite/
+
+# Node.js
+node-practice/node_modules/
+node-practice/.env
+node-practice/.cache/
+
+# VSCode
+.vscode/
+
+# IDE 설정
+.idea/
+*.iml
+
+# OS 및 임시 파일
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+
+# 기타 무시할 폴더
+/e/
+/eclipse/
+
+# 테스트 출력
+coverage/
+*.lcov
+
+# 패키지 로그 및 캐시
+npm-debug.log*
+.yarn/
+.pnpm-debug.log*

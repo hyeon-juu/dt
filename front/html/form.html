@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- form - 데이터를 서버로 전달하기 위해 
+     action 속성으로 전달해 줄 서버 주소 지정
+     mothod GET : 데이터 조회,요청 데이터 url에 노출 POST : CRUD, 노출x
+     input의 필수 요소 name-->
+    <!-- <form action="/action" method="post">
+        <label for="fname">First name:</label><br>
+        value = 초기값
+        <input type="text" id="fname" value="John" name="a" readonly>
+        <br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" value="Doe" name="b" disabled>
+        <br><br>
+        <input type="submit" value="Submit">
+        <hr>
+        value의 값이 넘어감
+        <input type="checkbox" name="time" value="0800"> 08:00
+        <input type="checkbox" name="time" value="1200"> 12:00
+        <hr>
+        <input type="radio" name="job" value="developer" id="a">
+        <label for="a">개발자</label>
+        <input type="radio" name="job" value="designer" id="b">
+        <label for="b">디자이너</label>
+    </form> -->
+
+    <!-- <form action="http://ggoreb.com/http/post.jsp" method="post" s>
+        <input type="text" name="auth-key" value="1q2w3e4r">
+        <select name="color" id="c">
+            <option value="red">red</option>
+            <option value="blue">blue</option>
+        </select>
+        button type=button 안해주면 기본 type=submit
+        <button type="button" onClick="alert('hi');">click me</button>
+        <input type="submit" value="submit">
+    </form> -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <div class="container mt-3">
+        <form class="was-validated">
+            <div class="form-group form-check">
+
+                <input id="a" class="form-check-input" type="checkbox" name="agree1" required>
+                <label for="a">이용약관 동의</label>
+
+                <div class="valid-feedback">완료~</div>
+                <div class="invalid-feedback">동의해주세요.</div>
+            </div>
+            <div class="form-group form-check">
+                <input id="b" class="form-check-input" type="checkbox" name="agree2" required>
+                <label for="b">개인정보 수집 및 이용 동의</label>
+
+                <div class="valid-feedback">완료~</div>
+                <div class="invalid-feedback">동의해주세요.</div>
+            </div>
+            <div class="form-group form-check">
+                <input id="c" class="form-check-input" type="checkbox" name="agree3" required>
+                <label for="c">위치정보 이용약관 동의</label>
+                <div class="valid-feedback">완료~</div>
+                <div class="invalid-feedback">동의해주세요.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

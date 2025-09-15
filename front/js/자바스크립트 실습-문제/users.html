@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>사용자(fetch)</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <nav class="container">
+    <a href="./index.html">홈</a>
+    <a href="./calc.html">연산/함수</a>
+    <a class="active" href="./users.html">사용자(fetch)</a>
+    <a href="./todos.html">할 일(localStorage)</a>
+    <a href="./prefs.html">설정(쿠키)</a>
+  </nav>
+
+  <main class="container">
+    <h2>사용자 목록</h2>
+    <input id="q" placeholder="이름/이메일 검색" />
+    <div id="list" class="list">
+      <div class="card">
+        <strong>이름 name</strong> <span class="small">이메일 email</span><br />
+        <span class="small">주소 중 도시 address city</span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // 코드 작성
+    // - https://jsonplaceholder.typicode.com/users 데이터 가져오기
+    const url = 'https://jsonplaceholder.typicode.com/users'
+    // - #list에 출력
+    const list = document.querySelector("#list");
+    const q = document.querySelector("#q");
+    const res = fetch(url);
+    res.then((d) => {
+      return d.json();
+    }).then((d) => {
+
+      // console.log(d);
+      for (let i of d) {
+
+        list.innerHTML += `
+        <div class="card">
+          <strong>${i.name}</strong> <span class="small">${i.email}</span><br/>
+          <span class="small">${i.address.city}</span>
+        </div>`
+      }
+
+
+
+
+      q.addEventListener("input", () => {
+        console.log(q.value);
+        list.innerHTML = '';
+        for (let i of d) {
+          if ((i.name).includes(q.value) || (i.email).includes(q.value)) {
+            list.innerHTML += `
+        <div class="card">
+          <strong>${i.name}</strong> <span class="small">${i.email}</span><br/>
+          <span class="small">${i.address.city}</span>
+        </div>`
+          }
+
+        }
+      })
+    })
+
+    // 코드 작성
+    // - 이름/이메일을 검색하면 해당 결과만 출력
+
+  </script>
+</body>
+
+</html>

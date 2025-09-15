@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="label"></div>
+    <div class="figure" style="width : 100px; height : 100px; background-color: black;"></div>
+    <script>
+        function callback() {
+            const label = document.querySelector('.label');
+            label.innerHTML = '<h2>모습 변경</h2>';
+            const figure = document.querySelector('.figure');
+            figure.style.backgroundColor = 'red';
+            figure.style.borderRadius = '100px';
+        }
+        setTimeout(callback, 2000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        const result = document.querySelector("#result");
+        function eat(callback) { //비동기 아님
+            setTimeout(() => {//비동기
+                result.innerHTML += `<p> 밥을 먹어요</p>`;
+                callback();
+            }, 1000);
+        }
+        function drink(callback) {
+            setTimeout(() => {
+                result.innerHTML += `<p> 물을 마셔요</p>`;
+                callback();
+            }, 1000);
+        }
+        function cleanTable(callback) {
+            setTimeout(() => {
+                result.innerHTML += `<p> 밥그릇을 치워요</p>`;
+                callback();
+            }, 1000);
+        }
+        function wash(callback) {
+            setTimeout(() => {
+                result.innerHTML += `<p> 설거지를 해요</p>`;
+                callback();
+            }, 1000);
+        }
+        // eat(() => {
+        //     drink(() => {
+        //         cleanTable(() => {
+        //             wash(() => {
+        //                 result.innerHTML += `<p>종료</p>`;
+        //             });
+        //         });
+        //     });
+        // });
+        eat().then(drink); //resolve하지 않으면 동작하지 않음
+
+        //콜백만을 사용할때의 함수 모습과 promise 사용할 때의 함수 모습 구분
+    </script>
+</body>
+
+</html>

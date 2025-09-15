@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Student {
+            constructor(name, age, enrolled, score) {
+                this.name = name;
+                this.age = age;
+                this.enrolled = enrolled;
+                this.score = score;
+            }
+        }
+        const students = [
+            new Student('A', 29, true, 45),
+            new Student('B', 28, false, 80),
+            new Student('C', 30, true, 90),
+            new Student('D', 40, false, 66),
+            new Student('E', 18, true, 90),
+        ];
+        // console.log(students);
+        // let a = students.find((v) => {
+        //     return v.score == 90;
+        // });
+        // console.log(a);
+
+        let b = students.filter((v) => {
+            return v.enrolled;
+        })
+        console.log(b);
+
+        const exist = students.some((v) => {
+            return v.score < 50;
+        })
+    </script>
+</body>
+
+</html>
+<!-- splice는 원본데이터를 수정함
+ substring이랑 slice는 원본 데이터 건들지 X -->

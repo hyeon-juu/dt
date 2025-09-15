@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function showMessage(message, from = 'unknown') {
+            console.log(`${message} by ${from}`);
+        }
+        showMessage('Hi!');
+
+        function printAll(...args) {
+            for (let i = 0; i < args.length; i++) {
+                console.log(args[i]);
+            }
+            for (const arg of args) {
+                console.log(arg);
+            }
+            args.forEach((arg) => console.log(arg));
+        }
+        printAll('java', 'script', 'html/css');
+        function 함수(age, name = "js") {
+            console.log(age, name);
+            return { "use": true };
+        }
+        const f = 함수;
+        f(1);
+        console.log(f(1))
+    </script>
+</body>
+
+</html>

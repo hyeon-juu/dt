@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    검색어 입력 : <input type="text" name="search">
+    <script>
+        const input = document.querySelector('[name=search]');
+        input.addEventListener('focus', (event) => {
+            let search = event.target.value; //event가 발생한 대상 event.target
+
+            if (search.length == 0) {
+                event.target.value = '#'
+
+            }
+        });
+        input.addEventListener('keypress', (event) => {
+            // console.dir(event);
+            if (event.keyCode == 32) {
+                input.value += ', #';
+            }
+        })
+    </script>
+</body>
+
+</html>

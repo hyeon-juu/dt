@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-grid">
+            <button type="button" class="btn btn-primary btn-block">
+                이미지 불러오기
+            </button>
+        </div>
+        <div class="target"></div>
+    </div>
+    <script>
+        const target = document.querySelector(".target");
+        document.querySelector('button').addEventListener('click', () => {
+            const choco = document.querySelector("img");
+            if (choco) {
+                target.removeChild(choco);
+            }
+
+
+            const img = document.createElement('img');
+            img.setAttribute('src', `http://ggoreb.com/images/choco/${parseInt(Math.random() * 6) + 1}.jpg`);
+            target.appendChild(img);
+
+
+        });
+
+    </script>
+</body>
+
+</html>
+<!-- revolution os -->

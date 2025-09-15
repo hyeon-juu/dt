@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div {
+            width: 150px !important;
+            height: 150px;
+            border: 1px solid black;
+        } */
+        * {
+            font-weight: bold;
+        }
+
+        .bg {
+            background-color: yellow;
+        }
+
+        li:nth-child(2n) {
+            color: magenta;
+        }
+
+        p,
+        li:nth-child(2n+1) {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div style="width: 200px;"></div> -->
+    <p>selector</p>
+    <ul>
+        <li class='bg'>
+            <p>tag</p>
+        </li>
+        <li class='bg'><span>class</span></li>
+        <li>
+            <p>id</p>
+        </li>
+        <li><span>attribute</span></li>
+        <li>
+            <p>descendant / child</p>
+        </li>
+        <li><span>siblings / adjacent</span></li>
+        <li>
+            <p>pseudo</p>
+        </li>
+    </ul>
+</body>
+
+</html>

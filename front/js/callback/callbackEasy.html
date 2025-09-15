@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        const result = document.querySelector("#result");
+        function eat(callback) {
+            setTimeout(() => {
+                console.log(' 밥을 먹어요');
+                result.innerHTML += `<p> 밥을 먹어요</p>`;
+                callback();
+            }, 1000);
+        }
+        function wash(callback) {
+            setTimeout(() => {
+                console.log(' 설거지를 해요');
+                result.innerHTML += `<p> 설거지를 해요</p>`;
+                callback();
+            }, 1000);
+        }
+        function finish() {
+            setTimeout(() => {
+                console.log(' 끗');
+                result.innerHTML += `<p> 끗</p>`;
+            }, 1000);
+            // console.log("2");
+        }
+        // eat(wash);
+        // == eat(()=>{ return wash}); 둘 다 같은 의미
+
+
+        // eat(wash);
+        eat(() => {
+            wash(() => {
+                finish();
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>

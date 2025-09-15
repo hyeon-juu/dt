@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <body>
+        <div id="box" style="width:100px; height:100px; background:red;"></div>
+        <button onclick="move()">움직이기</button>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+        <script>
+            function move() {
+                anime({
+                    targets: '#box',
+                    translateX: 50,
+                    rotate: '1turn',
+                    backgroundColor: '#00ffcc',
+                    duration: 1000
+                });
+            }
+        </script>
+    </body>
+
+</body>
+
+</html>
