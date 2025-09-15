@@ -7,7 +7,12 @@
 </head>
 
 <body>
-    <h1>환영합니다, <%= name %>님!</h1>
+    <h1>환영합니다, <%= name %>님! (<%= user %>)</h1>
+    <ul>
+        <% for(let i of rows){ %>
+            <li><%= i.hg_nm %>(<%= i.hj_nm %>) / <%= i.poly_nm %> / <%= i.orig_nm %></li>
+        <% } %>
+    </ul>
 </body>
 
 </html>
