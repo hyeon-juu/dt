@@ -4,7 +4,12 @@ const __dirname = import.meta.dirname;
 const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
+
+
 app.use(express.urlencoded());
+
+
 // GET /signup - 폼 보여주기
 app.get("/signup", (req, res) => {
     res.render("signup", { error: null, values: {} });
