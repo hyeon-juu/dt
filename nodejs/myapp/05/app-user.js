@@ -46,6 +46,13 @@ app.get("/welcome/:user", async (req, res) => {
          }
     );
 });
+// app.get('/',(req,res)=>{
+//   res.render(
+//     'assembly_member',{
+//       title:'국회의원'
+//     }
+//   )
+// })
 
 app.listen(3000, () => {
     console.log("서버 실행 중: http://localhost:3000");
